@@ -39,12 +39,28 @@ for _ in range(len(candidates)):
     print(candidates[_] + ": " + str(percent) + "00% (" + str(votes[_]) + ")")
 print("____________________________")
 
-max = 0
-maxpos = 0
-for _ in range(len(votes)):
-    if votes[_] > max:
-        max = votes[_]
-        maxpos = _
+
+report = os.path.join('/Users/duynguyen/python-challenge',
+                      'PyPoll', 'Election_Report.txt')
+
+with open(report, 'w', newline="") as rep:
+    rep.write("Election Results\n")
+    rep.write("____________________________\n")
+    rep.write("Total Votes: " + str(count))
+    rep.write("\n____________________________\n")
+    for _ in range(len(candidates)):
+        percent = round(votes[_] / count * 100, 3)
+        rep.write(candidates[_] + ": " + str(percent) +
+                  "00% (" + str(votes[_]) + ")\n")
+    rep.write("____________________________")
+    max = 0
+    maxpos = 0
+    for _ in range(len(votes)):
+        if votes[_] > max:
+            max = votes[_]
+            maxpos = _
+    rep.write("\nWinner: " + candidates[maxpos])
+    rep.write("\n____________________________")
 
 print("Winner: " + candidates[maxpos])
 print("____________________________")
