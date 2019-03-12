@@ -50,3 +50,16 @@ with open(file, newline='') as csvfile:
     print("Average Change: $" + str(average))
     print("Greatest Increase in Profits: " + datemax + " ($" + str(max) + ")")
     print("Greatest Decrease in Profits: " + datemin + " ($" + str(min) + ")")
+
+report = os.path.join('/Users/duynguyen/python-challenge',
+                      'PyBank', 'Financial_Report.txt')
+with open(report, 'w', newline='') as rep:
+    rep.write("\nFinancial Analysis")
+    rep.write("\n_________________________")
+    rep.write("\nTotal months: " + str(count))
+    rep.write("\nTotal: $" + str(total))
+    rep.write("\nAverage Change: $" + str(average))
+    rep.write("\nGreatest Increase in Profits: " +
+              datemax + " ($" + str(max) + ")")
+    rep.write("\nGreatest Decrease in Profits: " +
+              datemin + " ($" + str(min) + ")")
