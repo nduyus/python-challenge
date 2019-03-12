@@ -54,7 +54,7 @@ with open(file, newline='') as csvfile:
 report = os.path.join('/Users/duynguyen/python-challenge',
                       'PyBank', 'Financial_Report.txt')
 with open(report, 'w', newline='') as rep:
-    rep.write("\nFinancial Analysis")
+    rep.write("Financial Analysis")
     rep.write("\n_________________________")
     rep.write("\nTotal months: " + str(count))
     rep.write("\nTotal: $" + str(total))
