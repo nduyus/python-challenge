@@ -22,12 +22,12 @@ with open(file, newline='') as csvfile:
         diff.append(float(row[1]) - dif)
         dif = float(row[1])
         date.append(row[0])
+ 
+    a = 2
+    for a in range(1,len(diff)):
+        sum = sum + int(diff[a])
 
-    for a in diff:
-        sum = sum + int(a)
-    print(sum)
-    print(len(diff))
-    average = round(sum/len(diff), 2)
+    average = round(sum/(len(diff)-1), 2)
 
     for n in range(len(diff)):
         if diff[n] > max:
